@@ -1,0 +1,18 @@
+output: compare_at.o main.o seqListOps.o
+	gcc -o final_at.exe main.o compare_at.o seqListOps.o
+	./final_at.exe
+	make clean -f make.at
+
+compare_at.o : compare_at.c
+	gcc -c compare_at.c
+
+main.o : main.c
+	gcc -c main.c
+
+seqListOps.o : seqListOps.c
+	gcc -c seqListOps.c
+
+clean:
+	rm *.o
+	rm final_at.exe
+

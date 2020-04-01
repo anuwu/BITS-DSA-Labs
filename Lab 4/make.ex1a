@@ -1,0 +1,11 @@
+output : ex1a.o 
+	gcc -o ex1a.exe ex1a.o
+	./ex1a.exe
+	make clean -f make.ex1a
+
+ex1a.o : ex1a.c
+	gcc -c ex1a.c
+
+clean : 
+	rm *.o
+	rm ex1a.exe

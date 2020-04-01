@@ -1,0 +1,26 @@
+output : ex3.o linkmem.o lscreate.o lscreatecycle.o testcycle1.o lsmakecircular.o linkmem.h lsdata.h testcycle.h
+	gcc -w -o testcycle1.exe ex3.o linkmem.o lscreate.o lscreatecycle.o testcycle1.o lsmakecircular.o
+	./testcycle1.exe
+	make clean -f make.testcycle1
+
+lsmakecircular.o : lsmakecircular.c
+	gcc -w -c lsmakecircular.c
+
+testcycle1.o : testcycle1.c
+	gcc -w -c testcycle1.c
+
+lscreatecycle.o : lscreatecycle.c
+	gcc -w -c lscreatecycle.c
+
+ex3.o : ex3.c
+	gcc -w -c ex3.c
+
+linkmem.o : linkmem.c
+	gcc -w -c linkmem.c
+
+lscreate.o : lscreate.c
+	gcc -w -c lscreate.c
+
+clean :
+	rm *.o
+	rm *.exe

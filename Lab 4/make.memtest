@@ -1,0 +1,11 @@
+output : memtest.o 
+	gcc -o memtest.exe memtest.o
+	./memtest.exe
+	make clean -f make.memtest
+
+memtest.o : memtest.c
+	gcc -c memtest.c
+
+clean :
+	rm *.o
+	rm memtest.exe

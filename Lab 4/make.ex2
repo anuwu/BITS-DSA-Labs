@@ -1,0 +1,14 @@
+output : ex2.o mem.o mem.h
+	gcc -o ex2.exe ex2.o mem.o
+	./ex2.exe
+	make clean -f make.ex2
+
+ex2.o : ex2.c
+	gcc -c ex2.c
+
+mem.o : mem.c
+	gcc -c mem.c
+
+clean :
+	rm *.o
+	rm ex2.exe

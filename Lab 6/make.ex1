@@ -1,0 +1,26 @@
+output : ex1.o debug.o fileinput.o merge.o filecreate.o filemerge.o data.h 
+	gcc -o ex1.exe ex1.o debug.o fileinput.o merge.o filecreate.o filemerge.o
+	./ex1.exe
+	make clean -f make.ex1
+
+filemerge.o : filemerge.c
+	gcc -c filemerge.c
+
+filecreate.o : filecreate.c
+	gcc -c filecreate.c
+
+merge.o : merge.c
+	gcc -c merge.c
+
+ex1.o : ex1.c
+	gcc -c ex1.c
+
+debug.o : debug.c
+	gcc -c debug.c
+
+fileinput.o : fileinput.c
+	gcc -c fileinput.c
+
+clean : 
+	rm *.o
+	rm *.exe

@@ -1,0 +1,44 @@
+output : data.h create.h del.h find.h util.h print.h manual_traverse.h insert.h kmin.h range.h dll.h breadth.h main.o create.o del.o find.o util.o print.o manual_traverse.o insert.o kmin.o dll.o range.o breadth.o
+	gcc -o final.exe main.o create.o del.o find.o util.o print.o manual_traverse.o insert.o kmin.o range.o dll.o breadth.o
+	./final.exe
+	make clean -f make.main
+
+main.o : main.c
+	gcc -c main.c
+
+create.o : create.c
+	gcc -c create.c
+
+del.o : del.c
+	gcc -c del.c
+
+find.o : find.c
+	gcc -c find.c
+
+util.o : util.c
+	gcc -c util.c
+
+print.o : print.c
+	gcc -c print.c
+
+manual_traverse.o : manual_traverse.c
+	gcc -c manual_traverse.c
+
+insert.o : insert.c
+	gcc -c insert.c
+
+kmin.o : kmin.c
+	gcc -c kmin.c
+
+range.o : range.c
+	gcc -c range.c
+
+dll.o : dll.c
+	gcc -c dll.c
+
+breadth.o : breadth.c
+	gcc -c breadth.c
+
+clean :
+	rm *.o
+	rm *.exe

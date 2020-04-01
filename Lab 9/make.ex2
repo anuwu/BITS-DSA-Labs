@@ -1,0 +1,17 @@
+output : hashtable.h ex2data.h hash.h hashtable.o ex2.o hash.o
+	gcc -o ex2.exe ex2.o hashtable.o hash.o
+	./ex2.exe
+	make clean -f make.ex2
+
+hash.o : hash.c
+	gcc -c hash.c
+
+hashtable.o : hashtable.c
+	gcc -c hashtable.c
+
+ex2.o : ex2.c
+	gcc -c ex2.c
+
+clean :
+	rm *.o
+	rm *.exe

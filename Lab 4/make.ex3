@@ -1,0 +1,20 @@
+output : ex3.o linkmem.o lscreate.o lscreatecycle.o linkmem.h lsdata.h
+	gcc -o ex3.exe ex3.o linkmem.o lscreate.o lscreatecycle.o
+	./ex3.exe
+	make clean -f make.ex3
+
+lscreatecycle.o : lscreatecycle.c
+	gcc -c lscreatecycle.c
+
+ex3.o : ex3.c
+	gcc -c ex3.c
+
+linkmem.o : linkmem.c
+	gcc -c linkmem.c
+
+lscreate.o : lscreate.c
+	gcc -c lscreate.c
+
+clean :
+	rm *.o
+	rm ex3.exe

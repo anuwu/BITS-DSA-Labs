@@ -1,0 +1,12 @@
+output: test.o 
+	gcc -o test.exe test.o
+	./test.exe hello world
+	make clean -f make.test
+	
+
+test.o : test.c
+	gcc -c test.c
+	
+clean : 
+	rm *.o
+	rm test.exe

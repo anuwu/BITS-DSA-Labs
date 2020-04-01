@@ -1,0 +1,17 @@
+output : hash.o ex1.o profile.o hash.h  ex1data.h 
+	gcc -o ex1.exe ex1.o hash.o profile.o
+	./ex1.exe
+	make clean -f make.ex1
+
+profile.o : profile.c
+	gcc -c profile.c
+
+ex1.o : ex1.c
+	gcc -c ex1.c
+
+hash.o : hash.c
+	gcc -c hash.c
+
+clean :
+	rm *.o
+	rm *.exe

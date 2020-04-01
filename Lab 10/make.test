@@ -1,0 +1,11 @@
+output : test_case_gen.o
+	gcc -o test.exe test_case_gen.o
+	./test.exe
+	make clean -f make.test
+
+test_case_gen.o : test_case_gen.c
+	gcc -c test_case_gen.c
+
+clean :
+	rm test_case_gen.o
+	rm test.exe
